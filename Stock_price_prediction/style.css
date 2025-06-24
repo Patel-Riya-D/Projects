@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap');
+
+/* === Base Styling === */
+html, body, [class*="st-"] {
+    background: linear-gradient(135deg, #0e0f3b, #1e1266);
+    font-family: 'Inter', sans-serif;
+    color: #f8f9fa;
+}
+
+/* === Headings === */
+h1, h2, h3, h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+}
+
+/* === Market Ticker === */
+.market-ticker {
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.04);
+    padding: 8px 16px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    color: #f8f9fa;
+    text-align: center;
+    box-shadow: 0 0 6px rgba(13, 202, 240, 0.15);
+}
+.market-ticker .up {
+    color: #28e07c;
+}
+.market-ticker .down {
+    color: #ff5f5f;
+}
+
+/* === Sidebar Navigation Highlight === */
+section[data-testid="stSidebar"] label[data-testid="stRadioOption"] {
+    border-radius: 6px;
+    padding: 6px 10px;
+    transition: background 0.2s ease;
+    font-weight: 500;
+    color: #f8f9fa;
+}
+section[data-testid="stSidebar"] label[data-testid="stRadioOption"]:has(input[aria-checked="true"]) {
+    background-color: rgba(13, 202, 240, 0.15);
+    font-weight: 700;
+    color: #0dcaf0;
+    box-shadow: 0 0 0 2px rgba(13, 202, 240, 0.2);
+}
+
+/* === Cards === */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 0 18px rgba(13, 202, 240, 0.15);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    transition: 0.25s ease-in-out;
+}
+.card:hover {
+    box-shadow: 0 0 25px rgba(13, 202, 240, 0.3);
+    transform: scale(1.01);
+}
+
+/* === Pills and Metrics === */
+.metric-line {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 4px;
+}
+.pill {
+    background: rgba(13, 202, 240, 0.1);
+    border: 1px solid #0dcaf0;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+    font-size: 13px;
+    color: #0dcaf0;
+    display: inline-block;
+}
+
+/* === Model Badge & Metrics === */
+.model-badge {
+    display: inline-block;
+    background-color: rgba(13, 202, 240, 0.15);
+    border: 1px solid #0dcaf0;
+    color: #0dcaf0;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    box-shadow: 0 0 8px rgba(13, 202, 240, 0.2);
+}
+.model-metrics {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid #0dcaf0;
+    padding: 10px 18px;
+    margin: 12px 0;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ddd;
+}
+.tracker-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    margin: 0 0 20px 0;
+    padding: 10px 0;
+    color: #0dcaf0;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: 0.6px;
+}
+.tracker-title .faint-subtitle {
+    color: #ffffffcc;
+    font-weight: 400;
+    font-size: 90%;
+}
+/* === News Card Styling === */
+.news-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 0 0 transparent;
+    transition: all 0.3s ease;
+}
+.news-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 12px rgba(13, 202, 240, 0.15);
+    transform: scale(1.01);
+}
+
