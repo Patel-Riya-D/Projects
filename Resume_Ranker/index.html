@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AIviHire - Resume Ranker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <header class="header">
+    <div class="logo-title">
+      <span class="logo">🤖</span>
+      <span class="brand">AIviHire</span>
+    </div>
+    <nav>
+      <a href="/">🏠 Home</a>
+      <span class="theme-toggle" onclick="toggleTheme()">🌗</span>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 class="main-title">AI-Powered Resume Ranker</h1>
+
+    <form method="POST" action="/home" enctype="multipart/form-data">
+      <label>📄 Upload Resumes (PDFs)</label>
+      <input type="file" name="resumes" multiple accept="application/pdf" required>
+      <button type="submit">🚀 Rank Candidates</button>
+    </form>
+
+    {% if results %}
+    <section class="results-section">
+      <h2>📊 Ranking Results</h2>
+      <table>
+        <thead><tr><th>Resume</th><th>Score</th></tr></thead>
+        <tbody>
+          {% for name, score in results %}
+          <tr><td>{{ name }}</td><td>{{ '%.2f' % score }}%</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <canvas id="scoreChart" width="1000" height="400"></canvas>
+      <a href="/download" class="download-btn">📥 Download Report</a>
+    </section>
+    <script>
+      const ctx = document.getElementById('scoreChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: {{ results | map(attribute=0) | list | tojson }},
+          datasets: [{
+            label: 'Resume Score (%)',
+            data: {{ results | map(attribute=1) | list | tojson }},
+            backgroundColor: '#00f260',
+            borderColor: '#00c6ff',
+            borderWidth: 1
+          }]
+        },
+        options: { scales: { y: { beginAtZero: true, max: 100 } } }
+      });
+    </script>
+    {% endif %}
+  </div>
+
+  <div id="chatbot-button" onclick="toggleChat()">💬</div>
+  <div id="chatbot-container" style="display: none;">
+    <div id="chat-header">🤖 AIvi Assistant <span onclick="toggleChat()">❌</span></div>
+    <div id="chat-messages"></div>
+    <input type="text" id="chat-input" placeholder="Ask something..." onkeydown="if(event.key==='Enter') handleChat()" />
+  </div>
+
+  <script src="{{ url_for('static', filename='particles.min.js') }}"></script>
+  <script>
+    particlesJS.load('particles-js', '{{ url_for('static', filename='particles-config.js') }}');
+  </script>
+  <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

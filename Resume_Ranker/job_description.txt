@@ -1,0 +1,25 @@
+Job Title: Data Scientist
+
+We are seeking a data-driven and curious Data Scientist to join our analytics team. You will work on transforming data into insights that drive business decisions. The ideal candidate is strong in Python programming, machine learning, and data visualization.
+
+Responsibilities:
+- Analyze and clean structured/unstructured datasets
+- Develop predictive models using ML techniques (regression, classification, clustering)
+- Visualize data using tools like Matplotlib, Seaborn, or Tableau
+- Communicate results and build dashboards
+- Collaborate with data engineers and business analysts
+
+Required Skills:
+- Python, Pandas, NumPy, Scikit-learn
+- SQL & database querying
+- Data wrangling and feature engineering
+- Jupyter Notebooks, Git, and version control
+
+Preferred:
+- TensorFlow / PyTorch
+- Cloud services (AWS, GCP, Azure)
+- Tableau / Power BI / Streamlit
+- NLP, Time Series, or Deep Learning
+
+Soft Skills:
+- Critical thinking, communication, and teamwork

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AIviHire - Resume Ranker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<canvas id="particles-js"></canvas>
+
+<header class="header">
+  <div class="logo-title">
+    <span class="logo">🤖</span>
+    <span class="brand">AlviHire</span>
+  </div>
+  <nav>
+    <a href="/">🏠 Home</a>
+    <span class="theme-toggle">🌗</span>
+  </nav>
+</header>
+
+<div class="container">
+  <h1 class="main-title">AI-Powered Resume Ranker</h1>
+
+  <form id="upload-form" method="post" enctype="multipart/form-data" action="/upload">
+    <label for="file">📄 Upload Resumes (PDFs)</label><br>
+    <input type="file" id="file" name="files" multiple>
+    <button type="submit">🚀 Rank Candidates</button>
+  </form>
+
+  {% if table_data %}
+    <h2 class="ranking-title">📊 Ranking Results</h2>
+    <table>
+      <tr><th>Resume</th><th>Score</th></tr>
+      {% for row in table_data %}
+        <tr><td>{{ row.filename }}</td><td>{{ row.score }}%</td></tr>
+      {% endfor %}
+    </table>
+    <canvas id="barChart" width="1000" height="400"></canvas>
+  {% endif %}
+</div>
+
+<!-- Floating Chatbot -->
+<div id="chat-icon" onclick="toggleChat()">
+  💬
+</div>
+<div id="chatbot" class="hidden">
+  <div id="chat-header">🤖 Alvi Assistant</div>
+  <div id="chat-messages"></div>
+  <input type="text" id="chat-input" placeholder="Ask something..." />
+</div>
+
+<script src="{{ url_for('static', filename='particles-config.js') }}"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+</body>
+</html>

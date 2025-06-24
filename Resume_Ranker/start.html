@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AIviHire – Welcome</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <div class="start-container">
+    <div class="start-box">
+      <h1 class="gradient-text">👋 Welcome to AIviHire</h1>
+      <p>Your AI assistant for smart resume ranking</p>
+      <a href="/home" class="get-started-btn">🚀 Get Started</a>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='particles.min.js') }}"></script>
+  <script>
+    particlesJS.load('particles-js', '{{ url_for('static', filename='particles-config.js') }}');
+  </script>
+</body>
+</html>
