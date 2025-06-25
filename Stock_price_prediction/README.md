@@ -47,22 +47,82 @@ An advanced AI-powered stock analytics and forecasting dashboard built with **St
 
 ---
 
+## 🔧 Steps Performed
+
+> A summary of the key steps taken to build the Tracker – AI Stock Dashboard.
+
+1. **Project Setup**  
+   - Created virtual environment `lstm-env` (Python 3.10.18)  
+   - Installed dependencies: Streamlit, TensorFlow, yfinance, Plotly, OpenAI, etc.
+
+2. **Forecasting Models**  
+   - Implemented **LSTM** (with `.h5` models for AAPL, MSFT, etc.)  
+   - Added **ARIMA** forecasting using statsmodels  
+   - Visualized predictions using animated Plotly charts  
+
+3. **Dashboard UI**  
+   - Designed responsive layout with tabs: Overview, Forecast, Indicators, News, Evaluation, Ask AI  
+   - Styled cards using `style.css` and added particle background  
+   - Included a dark mode toggle
+
+4. **Stock Overview & Indicators**  
+   - Created overview cards with live stock data, sentiment & signal  
+   - Plotted **RSI**, **Bollinger Bands**, **MACD**, and mini sparkline charts  
+
+5. **News + AI Chatbot**  
+   - Integrated latest market news via NewsAPI  
+   - Added GPT-powered chatbot using OpenAI for user Q&A and AI-generated summaries  
+
+6. **Evaluation & Export**  
+   - Compared actual vs predicted charts (LSTM/ARIMA)  
+   - Placeholder buttons for downloading forecast as PDF/CSV
+
+---
+
+## 🛠 Environment Setup
+
+This project was built and tested with:
+
+- 🐍 **Python**: `3.10.18`
+- ⚙️ **Virtual Environment**: `lstm-env`
+- 📦 Main libraries:
+  - `streamlit`
+  - `tensorflow`
+  - `pandas`, `numpy`, `yfinance`
+  - `plotly`, `matplotlib`
+  - `statsmodels`, `scikit-learn`
+  - `openai`
+  - `requests`, `datetime`
+
+---
+
 ## 📷 Preview
 
 ### 🌐 Overview
 Displays real-time stock info in stylish glassmorphism cards.
 
+![Overview](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/overview1.png)
+![stock card](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/overview2.png)
+
 ### 📈 Forecast Tab
 Switch between LSTM and ARIMA model predictions with smooth Plotly animations and AI-generated summaries.
+
+![Forecast](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/forecast.png)
 
 ### 📉 Indicators
 Visualize technical indicators like Bollinger Bands, RSI, and MACD.
 
+![Indicators](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/indicators.png)
+
 ### 📰 News Feed
 Live headlines from financial markets with time and external links.
 
+![News section](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/news.png)
+
 ### 💬 Ask AI
 Ask anything about stocks, models, or performance — get instant smart replies using OpenAI GPT.
+
+![Chatbot](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/chatbot.png)
 
 ---
 
@@ -73,20 +133,28 @@ Ask anything about stocks, models, or performance — get instant smart replies 
 - **What**: Past 30-day closing prices
 - **Why**: Snapshot of stock momentum
 
+- ![Overview](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/overview1.png)
+
 ### 2. 🔮 LSTM Forecast Plot
 - **Where**: Forecast tab > LSTM
 - **What**: Historical vs 30-day future prediction
 - **Why**: Predicts future stock price using deep learning
+
+- ![LSTM Forecast Plot](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/LSTM%20forecast.png)
 
 ### 3. 🔢 ARIMA Forecast Plot
 - **Where**: Forecast tab > ARIMA
 - **What**: Historical + ARIMA prediction
 - **Why**: Statistical trend comparison with LSTM
 
+- ![ARIMA Forecast Plot](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/ARIMA%20plot.png)
+
 ### 4. 📉 Bollinger Bands
 - **Where**: Indicators tab
 - **What**: MA20 + upper/lower bands + closing price
 - **Why**: Detects volatility and price range
+
+- ![Bollinger Bands](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/Bollinger%20bands%20plot.png)
 
 ### 5. 📊 RSI (Relative Strength Index)
 - **Where**: Indicators tab
@@ -98,10 +166,14 @@ Ask anything about stocks, models, or performance — get instant smart replies 
 - **What**: MACD and signal line
 - **Why**: Tracks price momentum and buy/sell signals
 
+- ![RSI and MACD plot](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/RSI%20%26%20MACD.png)
+
 ### 7. 📈 Evaluation Plot
 - **Where**: Evaluation tab
 - **What**: Predicted vs Actual prices (LSTM)
 - **Why**: Showcases model accuracy and performance
+
+- ![Actual vs Predicted](https://github.com/Patel-Riya-D/Projects/blob/main/Stock_price_prediction/Evaluation%20plot.png)
 
 ---
 
@@ -121,9 +193,14 @@ Ask anything about stocks, models, or performance — get instant smart replies 
 
 ---
 
-## 📌 Credits
+## 🛠 How to Run
 
-- UI Inspired by: TradingView, Groww, and modern fintech designs  
-- Data from: Yahoo Finance via `yfinance`, NewsAPI  
-- Built using: `Streamlit`, `Plotly`, `Pandas`, `TensorFlow`, `OpenAI GPT`
+```bash
+streamlit run stock.py
+```
+
+The dashboard will launch in your browser at `http://localhost:8501`.
+
+---
+
 
