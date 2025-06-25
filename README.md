@@ -10,7 +10,7 @@ Automatically ranks resumes against selected job roles using NLP and keyword ana
 - 📌 Job role selection (e.g., Data Scientist)
 - 🧠 NLP-based keyword scoring using SpaCy
 - 📊 Visual ranking chart (using Chart.js)
-- 🧾 Generate downloadable **HR Report** (csv) for each resume
+- 🧾 Generate downloadable **HR Report** (csv)
 - 💬 AIvi Assistant chatbot for instant queries
 - 🌌 Modern glassmorphism UI with animated particle background
 - 🌙 Dark/light theme toggle
